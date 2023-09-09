@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Post extends Model
 {
-    
+
     static $rules = [
 		'fecha' => 'required',
 		'titulo' => 'required',
@@ -46,6 +46,6 @@ class Post extends Model
     {
         return $this->hasOne('App\Models\User', 'id', 'user_id');
     }
-    
+
 
 }

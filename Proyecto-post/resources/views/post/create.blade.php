@@ -3,6 +3,8 @@
 @section('template_title')
     {{ __('Create') }} Post
 @endsection
+<link href="/dist/tailwind.css" rel="stylesheet"/>
+
 
 @section('content')
     <section class="content container-fluid">
@@ -21,7 +23,12 @@
 
                             @include('post.form')
 
+
+
                         </form>
+                        <a href="{{ route('post.index') }}" class="btn btn-secondary pt-2">
+                            {{ __('Volver') }}
+                        </a>
                     </div>
                 </div>
             </div>

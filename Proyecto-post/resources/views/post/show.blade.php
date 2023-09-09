@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Fecha:</strong>
                             {{ $post->fecha }}
@@ -33,8 +33,8 @@
                             {{ $post->comentario }}
                         </div>
                         <div class="form-group">
-                            <strong>Users Id:</strong>
-                            {{ $post->users_id }}
+                            <strong>Usuario:</strong>
+                            {{ $post->user->name }}
                         </div>
 
                     </div>

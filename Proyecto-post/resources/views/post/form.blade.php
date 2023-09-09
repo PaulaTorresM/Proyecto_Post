@@ -1,6 +1,9 @@
+
+<link href="/dist/tailwind.css" rel="stylesheet" />
+
 <div class="box box-info padding-1">
     <div class="box-body">
-        
+
         <div class="form-group">
             {{ Form::label('fecha') }}
             {{ Form::date('fecha', $post->fecha, ['class' => 'form-control' . ($errors->has('fecha') ? ' is-invalid' : ''), 'placeholder' => 'Fecha']) }}
@@ -23,7 +26,7 @@
         </div>
 
     </div>
-    <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+    <div class="box-footer mt-10 pt-2">
+        <button type="submit" class="btn btn-primary mt-10">{{ __('Submit') }}</button>
     </div>
 </div>
