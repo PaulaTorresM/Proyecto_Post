@@ -20,7 +20,7 @@ class PostController extends Controller
     {
         $posts = Post::paginate();
 
-        return view('index', compact('posts'))
+        return view('post.index', compact('posts'))
             ->with('i', (request()->input('page', 1) - 1) * $posts->perPage());
     }
 
@@ -32,7 +32,7 @@ class PostController extends Controller
     public function create()
     {
         $post = new Post();
-        return view('create', compact('post'));
+        return view('post.create', compact('post'));
     }
 
     /**
@@ -47,7 +47,7 @@ class PostController extends Controller
 
         $post = Post::create($request->all());
 
-        return redirect()->route('index')
+        return redirect()->route('post.index')
             ->with('success', 'Post creado exitosamente.');
     }
 
@@ -57,12 +57,6 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $post = Post::find($id);
-
-        return view('show', compact('post'));
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -74,7 +68,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        return view('edit', compact('post'));
+        return view('post.edit', compact('post'));
     }
 
     /**
