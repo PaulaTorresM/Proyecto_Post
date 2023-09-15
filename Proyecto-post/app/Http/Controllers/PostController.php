@@ -84,7 +84,7 @@ class PostController extends Controller
 
         $post->update($request->all());
 
-        return redirect()->route('index')
+        return redirect()->route('post.index')
             ->with('success', 'Post actualizado exitosamente');
     }
 
@@ -97,7 +97,7 @@ class PostController extends Controller
     {
         $post = Post::find($id)->delete();
 
-        return redirect()->route('index')
+        return redirect()->route('post.index')
             ->with('success', 'Post eliminado exitosamente');
     }
 }
