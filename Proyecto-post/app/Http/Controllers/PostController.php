@@ -20,7 +20,7 @@ class PostController extends Controller
     {
         $posts = Post::paginate();
 
-        return view('post.index', compact('posts'))
+        return view('index', compact('posts'))
             ->with('i', (request()->input('page', 1) - 1) * $posts->perPage());
     }
 
@@ -32,7 +32,7 @@ class PostController extends Controller
     public function create()
     {
         $post = new Post();
-        return view('post.create', compact('post'));
+        return view('create', compact('post'));
     }
 
     /**
@@ -47,8 +47,8 @@ class PostController extends Controller
 
         $post = Post::create($request->all());
 
-        return redirect()->route('post.index')
-            ->with('success', 'Post created successfully.');
+        return redirect()->route('index')
+            ->with('success', 'Post creado exitosamente.');
     }
 
     /**
@@ -61,7 +61,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        return view('post.show', compact('post'));
+        return view('show', compact('post'));
     }
 
     /**
@@ -74,7 +74,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        return view('post.edit', compact('post'));
+        return view('edit', compact('post'));
     }
 
     /**
@@ -90,8 +90,8 @@ class PostController extends Controller
 
         $post->update($request->all());
 
-        return redirect()->route('post.index')
-            ->with('success', 'Post updated successfully');
+        return redirect()->route('index')
+            ->with('success', 'Post actualizado exitosamente');
     }
 
     /**
@@ -103,7 +103,7 @@ class PostController extends Controller
     {
         $post = Post::find($id)->delete();
 
-        return redirect()->route('post.index')
-            ->with('success', 'Post deleted successfully');
+        return redirect()->route('index')
+            ->with('success', 'Post eliminado exitosamente');
     }
 }
